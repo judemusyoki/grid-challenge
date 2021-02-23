@@ -2,7 +2,7 @@ import React from 'react';
 
 const Tile = (props) => {
   return (
-    <div className='tile'>
+    <div className='tile' aria-label={props.title + ' tile'}>
       <img src={props.imagePath} alt={props.title}></img>
       <h1>{props.title}</h1>
       <p>{props.description}</p>

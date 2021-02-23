@@ -66,9 +66,9 @@ footer p {
   margin: 5px auto;
 }
 
-.create-note {
+.search-tiles {
   position: relative;
-  width: 480px;
+  width: 380px;
   margin: 30px auto 20px auto;
   background: #fff;
   padding: 15px;
@@ -76,12 +76,22 @@ footer p {
   box-shadow: 0 1px 5px rgb(138, 137, 137);
 }
 
-.create-note input {
+.search-tiles input {
   width: 100%;
   border: none;
   padding: 4px;
   outline: none;
   font-size: 1.2em;
   font-family: inherit;
-  resize: none;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
 }
