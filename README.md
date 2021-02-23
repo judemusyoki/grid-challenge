@@ -1,2 +1,2 @@
-# Grid challenge
+# Planday Grid challenge
 
