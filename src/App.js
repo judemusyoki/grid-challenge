@@ -12,7 +12,7 @@ const App = () => {
   const [search, setSearch] = useState('');
   const [filtered, setFiltered] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [tilesPerPage, setTilesPerPage] = useState(4);
+  const [tilesPerPage, setTilesPerPage] = useState(10);
 
   const indexOfLastPost = currentPage * tilesPerPage;
   const indexOfFirstPost = indexOfLastPost - tilesPerPage;
@@ -81,12 +81,16 @@ const App = () => {
             />
           ))
         : 'No results found'}
-      <Pagination
+      {/* <Pagination
+        tilesPerPage={tilesPerPage}
+        totalTiles={totalTiles}
+        paginate={paginate}
+      /> */}
+      <Footer
         tilesPerPage={tilesPerPage}
         totalTiles={totalTiles}
         paginate={paginate}
       />
-      <Footer />
     </div>
   );
 };
