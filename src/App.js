@@ -3,7 +3,6 @@ import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Tile from './Tile';
-import Pagination from './components/Pagination';
 
 import tiles from './tiles';
 
@@ -12,7 +11,7 @@ const App = () => {
   const [search, setSearch] = useState('');
   const [filtered, setFiltered] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [tilesPerPage, setTilesPerPage] = useState(10);
+  const [tilesPerPage] = useState(10);
 
   const indexOfLastPost = currentPage * tilesPerPage;
   const indexOfFirstPost = indexOfLastPost - tilesPerPage;
@@ -33,30 +32,9 @@ const App = () => {
     );
   }, [search, currentTiles]);
 
-  // const Pagination = ({ tilesPerPage, totalTiles }) => {
-  //   const pageNumbers = [];
-
-  //   for (let i = 1; i <= Math.ceil(totalTiles / tilesPerPage); i++) {
-  //     pageNumbers.push(i);
-  //   }
-
-  //   return (
-  //     <nav>
-  //       <ul>
-  //         {pageNumbers.map((number) => (
-  //           <li key={number}>
-  //             <a href='!#'>{number}</a>
-  //           </li>
-  //         ))}
-  //       </ul>
-  //     </nav>
-  //   );
-  // };
-
   return (
     <div>
       <Header />
-      {/* {notes.map(createNote)} */}
       <div className='search-tiles'>
         <label htmlFor='Search'></label>
         <input
@@ -68,6 +46,7 @@ const App = () => {
           onChange={handleChange}
           placeholder='Search..'
           autoFocus
+          title='Search bar'
         />
       </div>
 
@@ -81,11 +60,6 @@ const App = () => {
             />
           ))
         : 'No results found'}
-      {/* <Pagination
-        tilesPerPage={tilesPerPage}
-        totalTiles={totalTiles}
-        paginate={paginate}
-      /> */}
       <Footer
         tilesPerPage={tilesPerPage}
         totalTiles={totalTiles}

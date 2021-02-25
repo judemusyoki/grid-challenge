@@ -12,7 +12,12 @@ const Pagination = ({ tilesPerPage, totalTiles, paginate }) => {
       <h1 aria-label='Pages'>Pages</h1>
       <ul>
         {pageNumbers.map((number) => (
-          <li className='pagination' key={number} aria-label='Page number'>
+          <li
+            className='pagination'
+            key={number}
+            aria-label='Page number'
+            title={'Page ' + number}
+          >
             <a onClick={() => paginate(number)} href='!#'>
               {number}
             </a>
